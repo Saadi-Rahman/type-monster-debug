@@ -15,18 +15,18 @@
   <body class="container text-white">
     <header class="col-md-10 col-lg-8  mx-auto">
         <h1 class="my-4 py-2">JavaScript Weekly</h1>
-        <hr class="border-2 border-top border-white my-3">
+        <hr class="border-2 border-top border-white my-4">
     </header>
 
     <main class="col-md-10 col-lg-8 mx-auto">
         <!-- Local storage vs Session storage -->
         <div>
             <div>
-                <h3 class="text-center">Difference Between Local Storage and Session Storage</h3>
+                <h3 class="text-center pt-2 pb-3">Difference Between Local Storage and Session Storage</h3>
             </div>
             <!-- Local storage -->
             <div class="pb-2">
-                <p><span><h4>Local Storage:</h4></span> This read-only interface property provides access to the Document's local storage object, the stored data is stored across browser sessions. Similar to sessionStorage, except that localStorage data gets cleared when the page session ends - that is when the page is closed. It is cleared when the last “private” tab of a browser is closed (localStorage data for a document loaded in a private browsing or incognito session).</p>
+                <p><span><h4 class="text-info">Local Storage:</h4></span> This read-only interface property provides access to the Document's local storage object, the stored data is stored across browser sessions. Similar to sessionStorage, except that localStorage data gets cleared when the page session ends - that is when the page is closed. It is cleared when the last “private” tab of a browser is closed (localStorage data for a document loaded in a private browsing or incognito session).</p>
     
                 <h5>Local storage has 4 methods:</h5>
                 <ul>
@@ -38,7 +38,7 @@
             </div>
             <!-- Session storage -->
             <div class="pb-2">
-                <p><span><h4>What is Session Storage?</h4></span> Session Storage objects can be accessed using the sessionStorage read-only property. The difference between sessionStorage and localStorage is that localStorage data does not expire, whereas sessionStorage data is cleared when the page session ends. <br><br>
+                <p><span><h4 class="text-info">What is Session Storage?</h4></span> Session Storage objects can be accessed using the sessionStorage read-only property. The difference between sessionStorage and localStorage is that localStorage data does not expire, whereas sessionStorage data is cleared when the page session ends. <br><br>
                 A unique page session gets created once a document is loaded in a browser tab. Page sessions are valid for only one tab at a time. Pages are only saved for the amount of time that the tab or the browser is open; they do not persist after the page reloads and restores. A new session is created each time a tab or window is opened; this is different from session cookies. Each tab/window that is opened with the same URL creates its own sessionStorage.When you duplicate a tab, the sessionStorage from the original tab is copied to the duplicated tab. Closing a window/tab ends the session and clears sessionStorage objects</p>
     
                 <h5>Session Storage has 4 methods:</h5>
@@ -91,6 +91,72 @@
                           </table>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <hr class="border-2 border-top border-white my-5">
+        <!-- Global scope vs Block scope -->
+        <div>
+            <div>
+                <h3 class="text-center pb-4">Difference Between Global scope and Block scope</h3>
+                <p>Although, there used to be only two types of scopes before ES6, the global scope, and the local scope. But, with ES6 local scope was broken down into function scope and block scope. <br><br>
+                Let's start with the global scope first.</p>
+            </div>
+
+            <div class="pb-2">
+                <!-- Global Scope -->
+                <p><span><h4 class="text-info">Global Scope:</h4></span> The variables defined outside of any function or curly brackets are known as global variables and have global scope. Global scope means that the variables can be accessed from any part of that program, any function or conditional state can access that variable.</p>
+    
+                <h5>For example</h5>
+                <p>var name = "Jhon"; <br>
+                    function printName(){ <br>
+                    console.log("My name is " + name); <br>
+                    } <br>
+                    
+                    printName(); <br><br>
+                // output: My name is Jhon</p>
+
+                <!-- Local Scope -->
+                <p><span><h4 class="text-info">Local Scope:</h4></span> If you were to define some variables inside curly brackets {} or inside a specific function then those variables are called local variables The local variables have a very confined scope which is called the local scope But, with the release of ES6, the local scope was further broken down into two different scopes:</p>
+
+                <ol>
+                    <li>Function scope</li>
+                    <li>Block  scope</li>
+                </ol>
+
+                <!-- Function Scope -->
+                <p><span><h4 class="text-info">Function Scope:</h4></span> The function scope is the accessibility of the variables defined inside a function, these variables cannot be accessed from any other function or even outside the function in the main file.</p>
+                <h5>For example</h5>
+                <p>First, we created a variable inside a function and accessed it inside the function:</p>
+                <p>function abc() { <br>
+                    year = 2021; <br>
+                    console.log("The year is "+ year); <br>
+                    } <br>
+                    
+                    abc(); <br><br>
+                    // output: The year is 2021
+                </p>
+                <p>We can see in the output that it is working perfectly fine as expected. However, if we try to access this variable outside of the function then we get an error.</p>
+
+                <!-- Block Scope -->
+                <p><span><h4 class="text-info">Block Scope:</h4></span> Block scope is also a sub-type of local scope. The block scope can be defined as the scope of the variables inside the curly brackets {}. Now, these curly brackets can be of loops, or conditional statements, or something else. You are only allowed to refer to these variables from within the curly brackets {}.</p>
+                <h5>For example</h5>
+                <p>Imagine a nested situation: <br> A block of code enclosed with curly brackets{} containing some block variables.</p>
+                <p>{ <br>
+                    let a = 10; <br>
+                    const b = 5; <br>
+                  }</p>
+                <p>This block of code is itself inside a function. Now when we try to access the variables from inside the function but outside of that specific block.</p>
+
+                <p>function addition() { <br>
+                        { <br>
+                          let a = 10; <br>
+                          const b = 5; <br>
+                        } <br>
+                        console.log(a + b); <br>
+                      }</p>
+                <p>And to access this function we need to invoke it by: <br> addition(); <br> Then we’ll be met with an error, even though they are local variables of the same function.</p>
+                <p>The keywords let and const are used to define block variables.</p>
             </div>
         </div>
 
