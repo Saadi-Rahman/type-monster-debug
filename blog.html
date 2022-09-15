@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Weekly</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500&display=swap" rel="stylesheet"/>
+  </head>
+
+  <body class="container text-white">
+    <header class="col-md-10 col-lg-8  mx-auto">
+        <h1 class="my-4 py-2">JavaScript Weekly</h1>
+        <hr class="border-2 border-top border-white my-3">
+    </header>
+
+    <main class="col-md-10 col-lg-8 mx-auto">
+        <!-- Local storage vs Session storage -->
+        <div>
+            <div>
+                <h3 class="text-center">Difference Between Local Storage and Session Storage</h3>
+            </div>
+            <!-- Local storage -->
+            <div class="pb-2">
+                <p><span><h4>Local Storage:</h4></span> This read-only interface property provides access to the Document's local storage object, the stored data is stored across browser sessions. Similar to sessionStorage, except that localStorage data gets cleared when the page session ends - that is when the page is closed. It is cleared when the last “private” tab of a browser is closed (localStorage data for a document loaded in a private browsing or incognito session).</p>
+    
+                <h5>Local storage has 4 methods:</h5>
+                <ul>
+                    <li><span class="fw-semibold">setItem() Method -</span> This method takes two parameters one is key and another one is value. It is used to store the value in a particular location with the name of the key. <br> localStorage.setItem(key, value)</li>
+                    <li><span class="fw-semibold">getItem() Method -</span> This method takes one parameter that is key which is used to get the value stored with a particular key name. <br> localStorage.getItem(key)</li>
+                    <li><span class="fw-semibold">removeItem() Method -</span> This is method is used to remove the value stored in the memory in reference to key. <br> localStorage.removeItem(key)</li>
+                    <li><span class="fw-semibold">clear() Method -</span> This method is used to clear all the values stored in localstorage. <br> localStorage.clear()</li>
+                </ul>
+            </div>
+            <!-- Session storage -->
+            <div class="pb-2">
+                <p><span><h4>What is Session Storage?</h4></span> Session Storage objects can be accessed using the sessionStorage read-only property. The difference between sessionStorage and localStorage is that localStorage data does not expire, whereas sessionStorage data is cleared when the page session ends. <br><br>
+                A unique page session gets created once a document is loaded in a browser tab. Page sessions are valid for only one tab at a time. Pages are only saved for the amount of time that the tab or the browser is open; they do not persist after the page reloads and restores. A new session is created each time a tab or window is opened; this is different from session cookies. Each tab/window that is opened with the same URL creates its own sessionStorage.When you duplicate a tab, the sessionStorage from the original tab is copied to the duplicated tab. Closing a window/tab ends the session and clears sessionStorage objects</p>
+    
+                <h5>Session Storage has 4 methods:</h5>
+                <ul>
+                    <li><span class="fw-semibold">setItem() Method -</span> This method takes two parameters one is key and another one is value. It is used to store the value in a particular location with the name of the key. <br> sessionStorage.setItem(key, value)</li>
+                    <li><span class="fw-semibold">getItem() Method -</span> This method takes one parameter that is key which is used to get the value stored with a particular key name. <br> sessionStorage.getItem(key)</li>
+                    <li><span class="fw-semibold">removeItem() Method -</span> This is method is used to remove the value stored in the memory in reference to key. <br> sessionStorage.removeItem(key)</li>
+                    <li><span class="fw-semibold">clear() Method -</span> This method is used to clear all the values stored in the session storage. <br> sessionStorage.clear()</li>
+                </ul>
+            </div>
+            <div>    
+                <div class="row">
+                    <div class="col-md-10 mx-auto">
+                        <table class="table table-dark table-striped caption-top">
+                            <caption>Local Storage VS Session Storage</caption>
+                            <thead>
+                              <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Local Storage</th>
+                                <th scope="col">Session Storage</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>The storage capacity of local storage is 5MB/10MB</td>
+                                <td>The storage capacity of session storage is 5MB</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>As it is not session-based, it must be deleted via javascript or manually</td>
+                                <td>It’s session-based and works per window or tab. This means that data is stored only for the duration of a session, i.e., until the browser (or tab) is closed</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td>The client  can only read local storage</td>
+                                <td>The client can only read session storage</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">4</th>
+                                <td>There is no transfer of data to the server in local storage</td>
+                                <td>There is no transfer of data to the server in session storage</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">5</th>
+                                <td>There are fewer old browsers that support it</td>
+                                <td>There are fewer old browsers that support it</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </main>
+      
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
